@@ -7,6 +7,7 @@ public class JniNative {
     public static native boolean baseApkLocCheck();
 
     public static native boolean soLocCheck();
+    public static native boolean checkSign(byte[] data,byte[] sign);
     public static  boolean soExistJni(byte[] path){
         String sPath = new String(path);
         //Log.e("lzqtest", "soExistJni: path "+sPath);

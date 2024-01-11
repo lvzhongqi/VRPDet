@@ -5,6 +5,7 @@ import alspack
 import main
 import shelldeal
 import alsso
+import sign_result
 
 
 def apkAnalyze(file_name):
@@ -34,4 +35,13 @@ def apkAnalyze(file_name):
         file.write("package: " +pkg + "\n")
     for so in sos :
         file.write("so: " +so + "\n")
+    file.close()
+
+    with open(main.out_file, 'rb+') as file:
+        byte_stream = file.read()
+    file.close()
+    sign = sign_result.sign(byte_stream)
+    #print(type(sign))
+    with open(main.out_file, 'a') as file:
+        file.write("sign: " +sign)
     file.close()

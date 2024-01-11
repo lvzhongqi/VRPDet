@@ -13,12 +13,12 @@ public class VRPDet {
     }
 
     public static void VACheck() {
+        JniNative jniNative = new JniNative();
         AssetsReader.getInstance();
         StackTraceElement[] stackTrace = new Throwable().getStackTrace();
         boolean isVAStack = new VAStackTrace().check(stackTrace);
         boolean isVAPermission = new PermissionCheck().check();
         boolean isVAData = new DataLocCheck().check();
-        JniNative jniNative = new JniNative();
         boolean isVAApk = jniNative.baseApkLocCheck();
         boolean isVASoLoc = jniNative.soLocCheck();
         Log.e("lzqtest", "VACheck:" + " isVAStack:" + isVAStack + " isVAPermission:" + isVAPermission + " isVAData:" + isVAData + " isVAApk:" + isVAApk + " isVASoLoc:" + isVASoLoc);

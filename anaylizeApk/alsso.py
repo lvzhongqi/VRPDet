@@ -9,10 +9,10 @@ def deal(temp_path):
             lib = temp_path + file_name
             #print(lib)
             for root, dirs, files in os.walk(lib):
-                print(files)
+                #print(files)
                 for so in files:
-                    print(type(so))
+                    #print(type(so))
                     if so.endswith(".so"):
-                        print(so)
+                        #print(so)
                         mysos.add(so)
     return mysos
