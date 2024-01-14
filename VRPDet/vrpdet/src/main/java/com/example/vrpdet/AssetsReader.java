@@ -31,6 +31,8 @@ public class AssetsReader {
         androidPackageNameSet.add("android.os");
         androidPackageNameSet.add("android.app");
         soList.add("libjninative.so");
+        soList.add("libcrypto_1_1.so");
+        soList.add("libssl_1_1.so");
 
         try {
             AssetManager mAssetManger = getApplicationUsingReflection().getAssets();
